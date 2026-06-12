@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && rm -rf dist/.git && cd dist && git init && git add . && git commit -m 'Deploy' && git remote add origin https://github.com/SaraAliDawood/PORTFOLIO.git && git push -f origin master:gh-pages"
   },
   "dependencies": {
     "framer-motion": "^11.11.11",

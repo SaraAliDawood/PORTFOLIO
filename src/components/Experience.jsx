@@ -39,6 +39,18 @@ const experiences = [
       'Engineered the front-end of Elite Academy using React + Context.',
       'Implemented dynamic content, user dashboards, and video streaming features.'
     ]
+  },
+  {
+    company: 'Freelance / Independent',
+    role: 'Full-Stack Odoo Developer',
+    period: 'Recent Project',
+    description: [
+      'Developed a full-stack Odoo 18 diet subscription platform connecting a B2C customer portal with ERP backend operations.',
+      'Built customer-facing flows for onboarding, WhatsApp verification, meal selection, renewals, and checkout.',
+      'Engineered backend business logic using Python, Odoo ORM, workflow rules, and automated notifications.',
+      'Developed responsive QWeb templates, OWL components, and dynamic CMS sections including a real-time calendar.',
+      'Integrated EvolutionAPI for WhatsApp, payment gateways, and REST APIs.'
+    ]
   }
 ];
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import heroImg from '/public/hero_v2.png';
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
         }}
         className="absolute inset-0 z-0 opacity-40" 
         style={{ 
-          backgroundImage: 'url(/hero_v2.png)', 
+          backgroundImage: `url(${heroImg})`, 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)'

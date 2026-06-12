@@ -32,10 +32,21 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-24 left-0 w-full glass-nav p-6 flex flex-col gap-4 md:hidden">
-          <a href="#experience" onClick={() => setIsMenuOpen(false)} className="hover:text-primary">Experience</a>
-          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-primary">Projects</a>
-          <a href="https://drive.google.com/file/d/1_k5yoIlgo4aT0kEVj_r0sBc_a64BEH09/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary text-center">Hire Me</a>
+        <div 
+          className="glass-nav flex flex-col md:hidden"
+          style={{ 
+            position: 'absolute', 
+            top: '100px', 
+            left: 0, 
+            width: '100%', 
+            padding: '24px',
+            gap: '16px',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+          }}
+        >
+          <a href="#experience" onClick={() => setIsMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500, paddingBottom: '8px', borderBottom: '1px solid var(--glass-border)' }}>Experience</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500, paddingBottom: '8px', borderBottom: '1px solid var(--glass-border)' }}>Projects</a>
+          <a href="https://drive.google.com/file/d/1_k5yoIlgo4aT0kEVj_r0sBc_a64BEH09/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary" style={{ justifyContent: 'center', marginTop: '8px' }}>Hire Me</a>
         </div>
       )}
     </nav>

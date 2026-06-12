@@ -8,55 +8,74 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import eliteImg from '/public/new_elite.png';
+import devfolioImg from '/public/new_devfolio.png';
+import neurotechImg from '/public/new_neurotech.png';
+import dishesImg from '/public/new_dishes.png';
+import storeusImg from '/public/new_storeus.png';
+import gomlaImg from '/public/new_gomla.png';
+import coachingImg from '/public/new_coaching.png';
+import dietImg from '/public/new_diet.png';
+
 const projects = [
   {
     title: 'StoreUs Ecommerce',
     desc: 'Major UAE B2C platform handling high traffic and optimized for conversions.',
-    image: '/storeus.png',
+    image: storeusImg,
     link: 'https://storeus.com/',
     tags: ['React', 'Redux', 'MUI']
   },
   {
     title: 'StoreUs Gomla',
     desc: 'Strategic B2B wholesale platform for the Egyptian market with bulk features.',
-    image: '/gomla.png',
+    image: gomlaImg,
     link: 'https://eg.storeus.com/ar/',
     tags: ['B2B', 'Ecommerce', 'React']
   },
   {
     title: 'Elite Academy',
     desc: 'Comprehensive E-learning portal with student dashboards and video courses.',
-    image: '/elite.png',
+    image: eliteImg,
     link: 'https://ieatd.com/',
     tags: ['Next.js', 'E-learning']
   },
   {
     title: 'DevFolio',
     desc: 'Modern architectural developer portfolio designed for performance and scale.',
-    image: '/devfolio.png',
+    image: devfolioImg,
     link: 'https://saraalidawood.github.io/Devolio-Portfolio-Page/',
     tags: ['HTML', 'CSS', 'JS']
   },
   {
     title: 'Neurotech',
     desc: 'Advanced AI and Data Science training platform for neural tech solutions.',
-    image: '/neurotech.png',
+    image: neurotechImg,
     link: 'https://neurotecheg.com/',
     tags: ['Front-End', 'Branding']
   },
   {
     title: 'DishesnMore',
     desc: 'High-end e-commerce experience for Turkish porcelain and houseware.',
-    image: '/dishes.png',
+    image: dishesImg,
     link: 'https://www.dishesnmore.com/',
     tags: ['React', 'WordPress']
   },
   {
     title: 'Coaching personality',
     desc: 'Expert assessment and coaching portal with custom integration logic.',
-    image: '/hero_bg.png',
+    image: coachingImg,
     link: 'https://www.linkedin.com/posts/sara-dawood17_%D8%A7%D9%84%D8%AD%D9%85%D8%AF%D9%84%D9%84%D9%87-repo-httpslnkdindpeguvtw-activity-7327474442022924288-aQ7U/',
     tags: ['PHP', 'WordPress', 'React']
+  },
+  {
+    title: 'Diet Subscription Platform',
+    desc: 'Full-stack Odoo 18 diet subscription platform connecting a B2C customer portal with ERP backend operations for subscriptions, meal plans, invoicing, and customer management.',
+    image: dietImg,
+    link: 'https://diet-odoo18.odoo-ai.online/en',
+    tags: ['Odoo 18', 'Python', 'QWeb', 'OWL']
   }
 ];
 
