@@ -23,6 +23,40 @@ const Hero = () => {
   const contentBlur = useTransform(scrollYProgress, [0, 0.6], [0, 10]);
   const blurFilter = useTransform(contentBlur, (b) => `blur(${b}px)`);
 
+  // Letter-by-letter kinetic reveal for the headline.
+  const nameContainer = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.055, delayChildren: 0.25 },
+    },
+  };
+  const letterVariant = {
+    hidden: { opacity: 0, y: 50, rotateX: -90 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  // Split a string into animated letters (spaces kept as non-breaking gaps).
+  const renderLetters = (text, className = '') =>
+    text.split('').map((char, i) => (
+      <motion.span
+        key={`${className}-${i}`}
+        variants={letterVariant}
+        className={className}
+        style={{
+          display: 'inline-block',
+          whiteSpace: 'pre',
+          transformOrigin: 'bottom',
+        }}
+      >
+        {char}
+      </motion.span>
+    ));
+
   return (
     <div
       ref={ref}
@@ -62,17 +96,18 @@ const Hero = () => {
           className="text-muted mb-4 block"
           style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.9rem' }}
         >
-          Front-End Developer & Odoo Specialist
+          Full-Stack Developer @ Arab Security Group
         </motion.span>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          variants={nameContainer}
+          initial="hidden"
+          animate="visible"
           className="text-6xl md:text-8xl font-bold mb-4"
-          style={{ fontSize: 'clamp(3rem, 10vw, 5.5rem)' }}
+          style={{ fontSize: 'clamp(3rem, 10vw, 5.5rem)', perspective: '800px' }}
         >
-          I'm <span className="gradient-text">Sara Dawood</span>
+          {renderLetters("I'm ")}
+          {renderLetters('Sara Dawood', 'gradient-text')}
         </motion.h1>
 
         <motion.p
@@ -80,10 +115,10 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="text-xl text-muted max-w-2xl mx-auto mb-8"
-          style={{ margin: '0 auto 32px', lineHeight: '1.8' }}
+          style={{ maxWidth: '720px', margin: '0 auto 32px', lineHeight: '1.8' }}
         >
-          I am a results-driven Front-End Developer with 3+ years of excellence in React, Redux, and Odoo ERP customization.
-          I take pride in optimizing performance, improving SEO, and delivering high-quality user experiences that drive real business value.
+          I'm a results-driven Full-Stack Developer with 3+ years building scalable web applications — React, Next.js, TypeScript and Redux on the front end, Python, FastAPI and Odoo on the back.
+          I care about clean architecture, performance, and delivering e-commerce, dashboard and ERP experiences that drive real business value.
         </motion.p>
 
         <motion.div

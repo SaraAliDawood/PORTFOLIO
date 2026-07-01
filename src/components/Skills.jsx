@@ -6,22 +6,22 @@ const skillGroups = [
   {
     title: 'Frontend',
     icon: <Code2 size={24} />,
-    skills: ['React.js', 'Next.js', 'Redux', 'JavaScript (ES6+)', 'HTML5', 'CSS3']
+    skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'Redux Toolkit', 'MUI', 'React Hook Form', 'HTML5', 'CSS3']
+  },
+  {
+    title: 'Backend & APIs',
+    icon: <Server size={24} />,
+    skills: ['Python', 'FastAPI', 'Django', 'REST APIs', 'Auth', 'Business Logic']
   },
   {
     title: 'ERP & CMS',
     icon: <Globe size={24} />,
-    skills: ['Odoo', 'WordPress', 'QWeb', 'XML Views']
+    skills: ['Odoo', 'QWeb', 'XML Views', 'OWL', 'WordPress']
   },
   {
-    title: 'Backend & Data',
-    icon: <Server size={24} />,
-    skills: ['Django', 'Python', 'MySQL', 'PostgreSQL']
-  },
-  {
-    title: 'Tools & Cloud',
-    icon: <Cloud size={24} />,
-    skills: ['Git/GitHub', 'Docker', 'AWS', 'Linux (Ubuntu)']
+    title: 'Databases & Tools',
+    icon: <Database size={24} />,
+    skills: ['PostgreSQL', 'MySQL', 'Git/GitHub', 'Docker', 'Linux', 'AWS', 'Postman', 'Jest']
   }
 ];
 
