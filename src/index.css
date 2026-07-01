@@ -33,6 +33,24 @@
   box-sizing: border-box;
 }
 
+/* Lenis smooth-scroll (recommended base styles) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+/* Respect users who prefer reduced motion — disable smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--bg-color);
