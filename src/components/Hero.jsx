@@ -24,37 +24,37 @@ const Hero = () => {
   const blurFilter = useTransform(contentBlur, (b) => `blur(${b}px)`);
 
   // Letter-by-letter kinetic reveal for the headline.
-  const nameContainer = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.055, delayChildren: 0.25 },
-    },
-  };
-  const letterVariant = {
-    hidden: { opacity: 0, y: 50, rotateX: -90 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
+  // Words are kept as intact inline-block groups so the line wraps *between*
+  // words on narrow screens (never mid-word), while each letter still flips
+  // in with a staggered delay driven by a running index.
+  let letterIndex = 0;
+  const renderWord = (word, className = '') => (
+    <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+      {word.split('').map((char, ci) => {
+        const delay = 0.25 + letterIndex * 0.05;
+        letterIndex += 1;
+        return (
+          <motion.span
+            key={ci}
+            initial={{ opacity: 0, y: 50, rotateX: -90 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+            className={className}
+            style={{ display: 'inline-block', transformOrigin: 'bottom' }}
+          >
+            {char}
+          </motion.span>
+        );
+      })}
+    </span>
+  );
 
-  // Split a string into animated letters (spaces kept as non-breaking gaps).
-  const renderLetters = (text, className = '') =>
-    text.split('').map((char, i) => (
-      <motion.span
-        key={`${className}-${i}`}
-        variants={letterVariant}
-        className={className}
-        style={{
-          display: 'inline-block',
-          whiteSpace: 'pre',
-          transformOrigin: 'bottom',
-        }}
-      >
-        {char}
-      </motion.span>
+  const renderPhrase = (text, className = '') =>
+    text.split(' ').map((word, wi) => (
+      <React.Fragment key={`${className}-${wi}`}>
+        {wi > 0 && ' '}
+        {renderWord(word, className)}
+      </React.Fragment>
     ));
 
   return (
@@ -87,6 +87,11 @@ const Hero = () => {
           filter: blurFilter,
           paddingBlock: 'var(--nav-height)',
           marginTop: 'var(--nav-height)',
+          width: '100%',
+          maxWidth: '900px',
+          margin: '0 auto',
+          paddingInline: '20px',
+          boxSizing: 'border-box',
         }}
       >
         <motion.span
@@ -94,28 +99,24 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="text-muted mb-4 block"
-          style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.9rem' }}
+          style={{ letterSpacing: '3px', textTransform: 'uppercase', fontSize: 'clamp(0.68rem, 2.6vw, 0.9rem)' }}
         >
           Full-Stack Developer @ Arab Security Group
         </motion.span>
 
-        <motion.h1
-          variants={nameContainer}
-          initial="hidden"
-          animate="visible"
+        <h1
           className="text-6xl md:text-8xl font-bold mb-4"
-          style={{ fontSize: 'clamp(3rem, 10vw, 5.5rem)', perspective: '800px' }}
+          style={{ fontSize: 'clamp(2.25rem, 9vw, 5.5rem)', perspective: '800px', lineHeight: 1.1, overflowWrap: 'break-word' }}
         >
-          {renderLetters("I'm ")}
-          {renderLetters('Sara Dawood', 'gradient-text')}
-        </motion.h1>
+          {renderPhrase("I'm")} {renderPhrase('Sara Dawood', 'gradient-text')}
+        </h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="text-xl text-muted max-w-2xl mx-auto mb-8"
-          style={{ maxWidth: '720px', margin: '0 auto 32px', lineHeight: '1.8' }}
+          style={{ maxWidth: '640px', margin: '0 auto 32px', lineHeight: '1.7', fontSize: 'clamp(0.95rem, 3.6vw, 1.25rem)' }}
         >
           I'm a results-driven Full-Stack Developer with 3+ years building scalable web applications — React, Next.js, TypeScript and Redux on the front end, Python, FastAPI and Odoo on the back.
           I care about clean architecture, performance, and delivering e-commerce, dashboard and ERP experiences that drive real business value.

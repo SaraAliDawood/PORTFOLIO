@@ -59,7 +59,7 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience">
-      <h2 className="text-center mb-8" style={{ fontSize: '2.5rem' }}>Professional <span className="gradient-text">Journey</span></h2>
+      <h2 className="text-center mb-8" style={{ fontSize: 'clamp(1.6rem, 6vw, 2.5rem)' }}>Professional <span className="gradient-text">Journey</span></h2>
       <div className="timeline">
         {experiences.map((exp, index) => (
           <motion.div 

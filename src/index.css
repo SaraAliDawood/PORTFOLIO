@@ -494,6 +494,37 @@ h2 {
   margin-bottom: 5px;
 }
 
+/* Mobile: tighten the outer spacing around timeline cards so they use the
+   width like the project cards do (was ~70px of left indent). */
+@media (max-width: 767px) {
+  section {
+    padding: 48px 16px;
+  }
+  .timeline {
+    margin: 24px auto;
+  }
+  .timeline::after {
+    left: 4px;
+  }
+  .timeline-item {
+    padding: 10px 0 10px 20px;
+  }
+  .timeline-item::after {
+    left: 0;
+    top: 26px;
+  }
+  .timeline-content {
+    margin-left: 6px;
+    padding: 16px;
+  }
+  /* Smaller, comfortable buttons on phones */
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+}
+
 /* Utils */
 .fixed { position: fixed; }
 .top-0 { top: 0; }

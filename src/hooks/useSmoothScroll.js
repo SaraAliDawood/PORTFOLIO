@@ -14,7 +14,14 @@ export default function useSmoothScroll() {
     const prefersReduced = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
-    if (prefersReduced) return;
+    if (prefersReduced) {
+      // No smooth scroll, but still honour deep links.
+      if (window.location.hash.length > 1) {
+        const target = document.querySelector(window.location.hash);
+        if (target) setTimeout(() => target.scrollIntoView(), 300);
+      }
+      return;
+    }
 
     const lenis = new Lenis({
       duration: 1.15,           // higher = more "weight"/glide
@@ -42,6 +49,15 @@ export default function useSmoothScroll() {
       lenis.scrollTo(target, { offset: -100 }); // clear the fixed navbar
     };
     document.addEventListener('click', handleAnchorClick);
+
+    // Deep-link: if the page loads with a hash, scroll to that section once
+    // the content has mounted (Lenis owns scrolling, so use it).
+    if (window.location.hash.length > 1) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => lenis.scrollTo(target, { offset: -100, immediate: true }), 300);
+      }
+    }
 
     return () => {
       cancelAnimationFrame(rafId);

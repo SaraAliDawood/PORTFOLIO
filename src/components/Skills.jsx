@@ -28,7 +28,7 @@ const skillGroups = [
 const Skills = () => {
   return (
     <section id="skills">
-      <h2 className="text-center mb-8" style={{ fontSize: '2.5rem' }}>Technical <span className="gradient-text">Expertise</span></h2>
+      <h2 className="text-center mb-8" style={{ fontSize: 'clamp(1.6rem, 6vw, 2.5rem)' }}>Technical <span className="gradient-text">Expertise</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillGroups.map((group, index) => (
           <motion.div 

@@ -194,7 +194,7 @@ const Projects = () => {
 
   return (
     <section id="projects" style={{ maxWidth: '100%', paddingLeft: 0, paddingRight: 0 }}>
-      <h2 className="text-center mb-8" style={{ fontSize: '2.5rem' }}>
+      <h2 className="text-center mb-8" style={{ fontSize: 'clamp(1.6rem, 6vw, 2.5rem)' }}>
         Full Project <span className="gradient-text">Portfolio</span>
       </h2>
       {isDesktop ? <HorizontalGallery /> : <MobileCarousel />}
