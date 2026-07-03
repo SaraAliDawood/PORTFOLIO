@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-8 nav-links-container">
         <a href="#experience" className="hover:text-primary transition-colors" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 500 }}>Experience</a>
         <a href="#projects" className="hover:text-primary transition-colors" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 500 }}>Projects</a>
-        <a href="https://drive.google.com/file/d/1l9hEJ2nN6bxBzfd7uz3QoaziJpF3t5RO/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>Hire Me</a>
+        <a href="https://drive.google.com/file/d/1Z1dHPy8ZwFQUa7nV9A2lbKDP5hI0Gff6/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>Hire Me</a>
       </div>
 
       {/* Mobile Toggle */}
@@ -46,7 +46,7 @@ const Navbar = () => {
         >
           <a href="#experience" onClick={() => setIsMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500, paddingBottom: '8px', borderBottom: '1px solid var(--glass-border)' }}>Experience</a>
           <a href="#projects" onClick={() => setIsMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 500, paddingBottom: '8px', borderBottom: '1px solid var(--glass-border)' }}>Projects</a>
-          <a href="https://drive.google.com/file/d/1l9hEJ2nN6bxBzfd7uz3QoaziJpF3t5RO/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary" style={{ justifyContent: 'center', marginTop: '8px' }}>Hire Me</a>
+          <a href="https://drive.google.com/file/d/1Z1dHPy8ZwFQUa7nV9A2lbKDP5hI0Gff6/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-primary" style={{ justifyContent: 'center', marginTop: '8px' }}>Hire Me</a>
         </div>
       )}
     </nav>

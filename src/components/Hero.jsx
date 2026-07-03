@@ -101,7 +101,7 @@ const Hero = () => {
           className="text-muted mb-4 block"
           style={{ letterSpacing: '3px', textTransform: 'uppercase', fontSize: 'clamp(0.68rem, 2.6vw, 0.9rem)' }}
         >
-          Full-Stack Developer @ Arab Security Group
+          Full-Stack Developer
         </motion.span>
 
         <h1
@@ -131,7 +131,7 @@ const Hero = () => {
           <a href="https://wa.me/971502542590" target="_blank" rel="noreferrer" className="btn-primary">
             Get in Touch
           </a>
-          <a href="https://drive.google.com/file/d/1_k5yoIlgo4aT0kEVj_r0sBc_a64BEH09/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-secondary">
+          <a href="https://drive.google.com/file/d/1Z1dHPy8ZwFQUa7nV9A2lbKDP5hI0Gff6/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-secondary">
             View Resume
           </a>
         </motion.div>

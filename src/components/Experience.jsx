@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    company: 'Arab Security Group',
-    role: 'Full-Stack / Odoo Developer',
+    company: 'Paymob',
+    role: 'Frontend Developer',
     period: 'Mar 2025 – Present',
     description: [
-      'Customize Odoo Sales, Website, HR and internal modules using Python, XML views, QWeb, ORM methods, ACLs and record rules to fit real business workflows.',
-      'Built backend business logic for a gym management system — members, subscriptions, sessions, role-based permissions, validations and reporting-ready data.',
-      'Integrate Odoo with external systems, validating request/response data and maintaining reliable end-to-end user journeys.',
-      'Deliver across frontend screens, backend Python logic and database-backed ERP flows — from requirements through testing and deployment.'
+      'Build React-based checkout and dashboard screens with clear success / failure / pending states, validation and friendly error handling.',
+      'Develop merchant-portal and POS dashboards — API-driven transaction tables, advanced filters, status badges and reports.',
+      'Integrate frontend screens with REST APIs and secure token-based flows, validating responses and edge cases with backend and QA teams.',
+      'Implement reliable UI states for data-heavy products — loading, empty, validation errors, retry actions and protected routes.'
     ]
   },
   {
@@ -25,13 +25,14 @@ const experiences = [
     ]
   },
   {
-    company: 'Matrix Clouds — Elite Academy',
-    role: 'Frontend Developer',
-    period: 'Project-Based',
+    company: 'Arab Security Group',
+    role: 'Full-Stack Developer — ERP',
+    period: 'Apr 2023 – Feb 2024',
     description: [
-      'Engineered frontend modules for an e-learning platform with React and Context API — dashboards, dynamic course content, cart/checkout and video-streaming pages.',
-      'Integrated the Zoom SDK directly in-platform so students attend live sessions without external redirects.',
-      'Improved responsiveness and maintainability via modular components, reusable layouts and cleaner state management.'
+      'Customized Odoo (Sales, Website, HR and internal modules) with Python, XML views, QWeb, ORM methods, ACLs and record rules to fit real business workflows.',
+      'Built backend business logic for a gym management system — members, subscriptions, sessions, role-based permissions, validations and reporting-ready data.',
+      'Integrated Odoo with external systems, validating request/response data and maintaining reliable end-to-end journeys.',
+      'Delivered across frontend screens, backend Python logic and database-backed ERP flows — from requirements through testing and deployment.'
     ]
   },
   {
@@ -41,17 +42,6 @@ const experiences = [
     description: [
       'Delivered coding and logic lessons to 200+ students, strengthening debugging, explanation and problem-solving skills.',
       'Reviewed student code and guided learners through structured JavaScript/Python problem-solving.'
-    ]
-  },
-  {
-    company: 'Freelance / Independent',
-    role: 'Full-Stack Odoo Developer',
-    period: 'Recent Project',
-    description: [
-      'Developed a full-stack Odoo 18 diet subscription platform connecting a B2C customer portal with ERP backend operations.',
-      'Built customer-facing flows for onboarding, OTP/WhatsApp verification, meal selection, subscription freezing/renewals and account dashboards.',
-      'Engineered backend business logic using Python, Odoo ORM, workflow rules and automated WhatsApp notifications.',
-      'Developed responsive QWeb/XML templates, OWL components and dynamic CMS sections including a real-time subscription calendar.'
     ]
   }
 ];
