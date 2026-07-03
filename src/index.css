@@ -239,6 +239,16 @@ body {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+/* Fallback for browsers/devices that don't render backdrop-filter
+   (common on mobile). Without the frosted blur, the near-transparent
+   glass fill vanishes — so give cards a solid-enough surface + border. */
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
 .glass-nav {
   background: var(--glass-nav);
   backdrop-filter: blur(8px);
@@ -468,6 +478,13 @@ h2 {
 .timeline-content {
   padding: 20px;
   margin-left: 20px;
+  /* Stronger than the base glass so the card stays visible over the
+     coloured section gradient and on mobile browsers that drop
+     backdrop-filter (where a 3% fill is effectively invisible). */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .timeline-date {
