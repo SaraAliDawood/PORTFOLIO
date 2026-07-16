@@ -71,7 +71,7 @@ const projects = [
     title: 'Diet Subscription Platform',
     desc: 'Full-stack Odoo 18 diet subscription platform connecting a B2C customer portal with ERP backend operations for subscriptions, meal plans, invoicing, and customer management.',
     image: dietImg,
-    link: 'https://diet-odoo18.odoo-ai.online/en',
+    link: 'https://drive.google.com/file/d/1aw4vEdJg85Lh7m_bbKM-gX39MoMaMxYx/view?usp=drivesdk',
     tags: ['Odoo 18', 'Python', 'QWeb', 'OWL']
   }
 ];
